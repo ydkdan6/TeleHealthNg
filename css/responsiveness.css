@@ -17,4 +17,13 @@
     .img-box img {
         width: 19rem;
     }
+
+    .btn {
+        margin-top: 5rem;
+        width: 9rem;
+    }
+
+    .card {
+        width: 80%;
+    }
 }
