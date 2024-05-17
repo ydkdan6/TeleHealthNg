@@ -1,0 +1,20 @@
+@media (max-width: 400px){
+    .welcome-screen {
+        margin-left: 0rem;
+        background: linear-gradient(90deg, #00ffff, #ff00c3);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .main-interface h1 {
+        background: linear-gradient(90deg, #00ffff, #ff00c3);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; 
+    }
+
+    .img-box img {
+        width: 19rem;
+    }
+}
