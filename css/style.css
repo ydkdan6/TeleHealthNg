@@ -180,3 +180,6 @@ h2 {
     margin-right: 10px;
 }
 
+#signOut {
+    display: none;
+}

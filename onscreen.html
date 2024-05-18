@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .profile {
+            margin-top: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to TeleHealthNg</h1>
+    <div class="profile">
+        <img id="userPic" src="" alt="Profile Picture">
+        <h2 id="userName"></h2>
+        <p id="userEmail"></p>
+    </div>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+    <script type="module">
+        // Your web app's Firebase configuration
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+        import { getAuth, signOut, getRedirectResult, signInWithRedirect, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuP-ayI_wi_gnGCpW9h2E0W6XLZ7VZxFo",
+            authDomain: "telehealthng.firebaseapp.com",
+            projectId: "telehealthng",
+            storageBucket: "telehealthng.appspot.com",
+            messagingSenderId: "800458535904",
+            appId: "1:800458535904:web:ae9af5c025dcf6d27d3185"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in
+                document.getElementById('userName').textContent = user.displayName;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('userPic').src = user.photoURL;
+            } else {
+                // No user is signed in
+                window.location.href = "/index.html";
+            }
+        });
+    </script>
+</body>
+</html>

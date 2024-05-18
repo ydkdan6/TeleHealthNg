@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
             welcomeScreen.classList.add("fade-out");
             mainInterface.style.display = "block";
         });
-    }, 1000); // 2-second delay
+    }, 2000); // 2-second delay
 });
